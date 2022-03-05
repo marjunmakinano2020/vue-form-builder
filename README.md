@@ -28,3 +28,5 @@ Todo
 ```
 
 ## Todo
+
+* Fix errors on yarn serve
