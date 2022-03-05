@@ -7,7 +7,7 @@
  *  @author Phat Tran <phattranminh96@gmail.com>
  */
 const EMIT_EVENT = "change";
-const deepEqual = require('deep-equal') // TO CHECK THE DEEPEST VALUES OF THE FORM...
+const deepEqual = require("deep-equal"); // TO CHECK THE DEEPEST VALUES OF THE FORM...
 
 const FORM_BUILDER_MODEL = {
     props: {
@@ -15,7 +15,7 @@ const FORM_BUILDER_MODEL = {
     },
     model: {
         event: EMIT_EVENT,
-        props: "value"
+        props: "value",
     },
 
     watch: {
@@ -25,39 +25,37 @@ const FORM_BUILDER_MODEL = {
         formData: {
             deep: true, // deep watcher - because we have a long-tree object
             handler(newFormData) {
-                this.$emit(EMIT_EVENT, newFormData)
-            }
+                this.$emit(EMIT_EVENT, newFormData);
+            },
         },
 
         /**
          * For Update the New Configuration After User Applied new DATA into v-model
          */
         value: {
-            deep:true,
+            deep: true,
             handler(newFormData, oldFormData) {
                 // because this is in the initialize => no data at first
-                if (typeof oldFormData === 'undefined') {
-                    return
+                if (typeof oldFormData === "undefined") {
+                    return;
                 }
 
                 // we have to create a new formConfig for the "unexpected value" like: {}, null, undefined
                 // only available for null and empty object data
                 if (!newFormData || !Object.keys(newFormData).length) {
-                    return this.mapping()
+                    return this.mapping();
                 }
 
                 // this time object have data, we have to make sure everything
                 if (deepEqual(newFormData, oldFormData)) {
-                    return
+                    return;
                 }
 
                 // okay this time object is fully new and we need to do mapping again
-                return this.mapping(newFormData)
-            }
-        }
+                return this.mapping(newFormData);
+            },
+        },
     },
 };
 
-export {
-    FORM_BUILDER_MODEL
-}
+export { FORM_BUILDER_MODEL };

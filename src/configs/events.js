@@ -14,9 +14,8 @@ const EVENT_CONSTANTS = {
             UPDATE: "builder.section.update",
 
             // section sort
-            PUSH: "builder.section.push"
+            PUSH: "builder.section.push",
         },
-
 
         ROW: {
             CREATE: "builder.row.create",
@@ -75,9 +74,7 @@ const EVENT_CONSTANTS = {
         RUN_VALIDATION: "renderer.run_validation",
         VALIDATION_OK: "renderer.validation_ok",
         VALIDATION_FAILED: "renderer.validation_failed",
-    }
+    },
 };
 
-export {
-    EVENT_CONSTANTS
-}
+export { EVENT_CONSTANTS };

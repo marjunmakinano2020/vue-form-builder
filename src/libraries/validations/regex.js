@@ -7,9 +7,9 @@
 export default function isRegexPassed(fieldValue, regexRule) {
     const splitRules = regexRule.split("|");
 
-    const strRegexRule = splitRules[0]
+    const strRegexRule = splitRules[0];
     const strRegexFlag = splitRules[1] || "g";
 
     const regExp = new RegExp(strRegexRule, strRegexFlag);
-    return regExp.test(fieldValue)
+    return regExp.test(fieldValue);
 }

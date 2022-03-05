@@ -4,7 +4,7 @@
  * @used SectionNavigationBar
  * @author Phat Tran
  */
-import {EVENT_CONSTANTS} from "@/configs/events";
+import { EVENT_CONSTANTS } from "@/configs/events";
 
 const SECTION_SORT_MIXINS = {
     methods: {
@@ -14,7 +14,11 @@ const SECTION_SORT_MIXINS = {
          * @listener FormBuilder
          */
         pushUp() {
-            this.$formEvent.$emit(EVENT_CONSTANTS.BUILDER.SECTION.PUSH, this.section, 0)
+            this.$formEvent.$emit(
+                EVENT_CONSTANTS.BUILDER.SECTION.PUSH,
+                this.section,
+                0
+            );
         },
 
         /**
@@ -23,12 +27,13 @@ const SECTION_SORT_MIXINS = {
          * @listener FormBuilder
          */
         pushDown() {
-            this.$formEvent.$emit(EVENT_CONSTANTS.BUILDER.SECTION.PUSH, this.section, 1)
-        }
-    }
-}
+            this.$formEvent.$emit(
+                EVENT_CONSTANTS.BUILDER.SECTION.PUSH,
+                this.section,
+                1
+            );
+        },
+    },
+};
 
-
-export {
-    SECTION_SORT_MIXINS
-}
+export { SECTION_SORT_MIXINS };

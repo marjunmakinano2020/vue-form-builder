@@ -1,12 +1,12 @@
 /**
  * Base extendation for the Row-View - Form-Builder
  */
-import {STYLE_INJECTION_MIXIN} from "@/mixins/style-injection-mixin";
+import { STYLE_INJECTION_MIXIN } from "@/mixins/style-injection-mixin";
 import ControlView from "@/views/renderer/ControlView";
 
 const RENDERER_ROW_VIEW_MIXIN = {
     components: {
-        ControlView
+        ControlView,
     },
     mixins: [STYLE_INJECTION_MIXIN],
 
@@ -16,7 +16,7 @@ const RENDERER_ROW_VIEW_MIXIN = {
          */
         section: {
             type: Object,
-            required: true
+            required: true,
         },
 
         /**
@@ -24,7 +24,7 @@ const RENDERER_ROW_VIEW_MIXIN = {
          */
         row: {
             type: Object,
-            required: true
+            required: true,
         },
 
         /**
@@ -41,13 +41,12 @@ const RENDERER_ROW_VIEW_MIXIN = {
     },
 
     computed: {
-
         /**
          * Check if we had controls
          * @returns {boolean}
          */
         hasControls() {
-            return this.row.controls.length > 0
+            return this.row.controls.length > 0;
         },
 
         /**
@@ -57,16 +56,10 @@ const RENDERER_ROW_VIEW_MIXIN = {
         containerClasses() {
             return [
                 this.styles.ROW,
-                'control-list-container',
-                (
-                    this.hasControls
-                        ? ''
-                        : 'empty'
-                )
-            ]
+                "control-list-container",
+                this.hasControls ? "" : "empty",
+            ];
         },
     },
-}
-export {
-    RENDERER_ROW_VIEW_MIXIN
-}
+};
+export { RENDERER_ROW_VIEW_MIXIN };

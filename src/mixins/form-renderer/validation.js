@@ -1,6 +1,6 @@
 import Validation from "@/libraries/validation";
-import {EVENT_CONSTANTS} from "@/configs/events";
-import {ALERT_DIALOG} from "@/libraries/alert-dialog";
+import { EVENT_CONSTANTS } from "@/configs/events";
+import { ALERT_DIALOG } from "@/libraries/alert-dialog";
 
 const VALIDATION_MIXIN = {
     data: () => ({
@@ -13,13 +13,16 @@ const VALIDATION_MIXIN = {
          * @param {Object} errorBucket {controlName: [array of message]}
          */
         setValidationError(errorBucket) {
-            this.$formEvent.$emit(EVENT_CONSTANTS.RENDERER.VALIDATION_FAILED, true)
+            this.$formEvent.$emit(
+                EVENT_CONSTANTS.RENDERER.VALIDATION_FAILED,
+                true
+            );
 
             // use set for reactive...
-            this.$set(this, 'validationErrors', errorBucket)
+            this.$set(this, "validationErrors", errorBucket);
 
             if (this.$form.validationErrorShowAlert) {
-                ALERT_DIALOG.show(this.$form.validationErrorAlertText)
+                ALERT_DIALOG.show(this.$form.validationErrorAlertText);
             }
         },
 
@@ -28,26 +31,27 @@ const VALIDATION_MIXIN = {
          */
         async runValidation() {
             // always clear validation before run...
-            this.$set(this, 'validationErrors', {})
+            this.$set(this, "validationErrors", {});
 
             // run the validation
-            const result = this.$form.Validation.run()
+            const result = this.$form.Validation.run();
 
             // field-error handling
             if (result.errors()) {
-                return this.setValidationError(result.errorBuckets)
+                return this.setValidationError(result.errorBuckets);
             }
 
             // if we turned on the server-side validation
             if (this.isEnableServerSideValidation) {
-                const isServersideValidationOk = await this.requestForServerSideValidation()
+                const isServersideValidationOk =
+                    await this.requestForServerSideValidation();
                 if (!isServersideValidationOk) {
                     return;
                 }
             }
 
             // ok emit to all listener if they want to know the validation is ok or not
-            this.$formEvent.$emit(EVENT_CONSTANTS.RENDERER.VALIDATION_OK, true)
+            this.$formEvent.$emit(EVENT_CONSTANTS.RENDERER.VALIDATION_OK, true);
         },
 
         /**
@@ -56,14 +60,17 @@ const VALIDATION_MIXIN = {
          * @returns {Promise<boolean>}
          */
         async requestForServerSideValidation() {
-            const validationResult = await fetch(this.serverSideValidationEndpoint, {
-                method: "POST",
-                headers: {
-                    'Content-Type': 'application/json; charset=utf-8',
-                    'Accept': 'application/json'
-                },
-                body: this.valueContainer
-            })
+            const validationResult = await fetch(
+                this.serverSideValidationEndpoint,
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json; charset=utf-8",
+                        Accept: "application/json",
+                    },
+                    body: this.valueContainer,
+                }
+            );
 
             // oke validation success
             if (validationResult.ok) {
@@ -73,10 +80,10 @@ const VALIDATION_MIXIN = {
             // I consider 422 is failed the validation
             if (validationResult.status === 422) {
                 // the body should contains error messages
-                const errorsBag = await validationResult.json()
-                this.setValidationError(errorsBag)
+                const errorsBag = await validationResult.json();
+                this.setValidationError(errorsBag);
 
-                return false
+                return false;
             }
         },
     },
@@ -89,11 +96,14 @@ const VALIDATION_MIXIN = {
         this.$form.Validation = new Validation(
             this.valueContainer,
             this.formData.controls,
-            this.$form.validationClosures || {},
-        )
+            this.$form.validationClosures || {}
+        );
 
         // listen to validation invoke
-        this.$formEvent.$on(EVENT_CONSTANTS.RENDERER.RUN_VALIDATION, this.runValidation);
+        this.$formEvent.$on(
+            EVENT_CONSTANTS.RENDERER.RUN_VALIDATION,
+            this.runValidation
+        );
     },
 
     computed: {
@@ -103,7 +113,10 @@ const VALIDATION_MIXIN = {
          * @returns {Boolean}
          */
         isEnableServerSideValidation() {
-            if (!this.formConfiguration.formConfig || !this.formConfiguration.formConfig.enableServerSideValidation) {
+            if (
+                !this.formConfiguration.formConfig ||
+                !this.formConfiguration.formConfig.enableServerSideValidation
+            ) {
                 return false;
             }
 
@@ -116,9 +129,10 @@ const VALIDATION_MIXIN = {
          * @returns {any}
          */
         serverSideValidationEndpoint() {
-            return this.formConfiguration.formConfig.serverSideValidationEndpoint
-        }
+            return this.formConfiguration.formConfig
+                .serverSideValidationEndpoint;
+        },
     },
-}
+};
 
-export {VALIDATION_MIXIN}
+export { VALIDATION_MIXIN };

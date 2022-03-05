@@ -6,13 +6,13 @@
 export default function requiredRule(fieldValue) {
     // for checkboxes / multiple dropdown
     if (Array.isArray(fieldValue)) {
-        return fieldValue.length > 0
+        return fieldValue.length > 0;
     }
 
     // for text/number/any...
     if (fieldValue === "") {
-        return false
+        return false;
     }
 
-    return true
+    return true;
 }

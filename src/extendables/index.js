@@ -4,7 +4,7 @@
  * @author Phat Tran
  */
 
-import Vue from 'vue'
+import Vue from "vue";
 
 /**
  * Import libraries/plugins goes here

@@ -4,18 +4,17 @@
  * @license From Zondicons of Steve Schoger. Thanks very much for the beautiful/lightweight icons
  * @iconHomePage https://www.zondicons.com/
  */
-import {ARROW_UP_ICON} from "@/libraries/icons/arrow-up.icon";
-import {ARROW_DOWN_ICON} from "@/libraries/icons/arrow-down.icon";
-import {EDIT_PENCIL_ICON} from "@/libraries/icons/edit-pencil.icon";
-import {COG_ICON} from "@/libraries/icons/cog.icon";
-import {ADD_OUTLINE_ICON} from "@/libraries/icons/add-outline.icon";
-import {CLOSE_ICON} from "@/libraries/icons/close.icon";
-import {TRASH_ICON} from "@/libraries/icons/trash.icon";
-import {CHEVRON_UP_ICON} from "@/libraries/icons/chevron-up.icon";
-import {CHEVRON_DOWN_ICON} from "@/libraries/icons/chevron-down.icon";
-import {NAVIGATION_MORE_ICON} from "@/libraries/icons/navigation-more.icon";
-import {INFORMATION_OUTLINE_ICON} from "@/libraries/icons/information-outline.icon";
-
+import { ARROW_UP_ICON } from "@/libraries/icons/arrow-up.icon";
+import { ARROW_DOWN_ICON } from "@/libraries/icons/arrow-down.icon";
+import { EDIT_PENCIL_ICON } from "@/libraries/icons/edit-pencil.icon";
+import { COG_ICON } from "@/libraries/icons/cog.icon";
+import { ADD_OUTLINE_ICON } from "@/libraries/icons/add-outline.icon";
+import { CLOSE_ICON } from "@/libraries/icons/close.icon";
+import { TRASH_ICON } from "@/libraries/icons/trash.icon";
+import { CHEVRON_UP_ICON } from "@/libraries/icons/chevron-up.icon";
+import { CHEVRON_DOWN_ICON } from "@/libraries/icons/chevron-down.icon";
+import { NAVIGATION_MORE_ICON } from "@/libraries/icons/navigation-more.icon";
+import { INFORMATION_OUTLINE_ICON } from "@/libraries/icons/information-outline.icon";
 
 const ICONS = {
     addOutline: ADD_OUTLINE_ICON,
@@ -28,8 +27,8 @@ const ICONS = {
     chevronUp: CHEVRON_UP_ICON,
     chevronDown: CHEVRON_DOWN_ICON,
     navigationMore: NAVIGATION_MORE_ICON,
-    informationOutline: INFORMATION_OUTLINE_ICON
-}
+    informationOutline: INFORMATION_OUTLINE_ICON,
+};
 
 const FormIcon = {
     /**
@@ -40,25 +39,20 @@ const FormIcon = {
      * @param {String} fillColor - Hex Color String (Eg: #ffffff)
      * @returns {string} of SVG HTML TAG
      */
-    getSVG(
-        iconName,
-        width = '16px',
-        height = '16px',
-        fillColor = '#ffffff'
-    ) {
+    getSVG(iconName, width = "16px", height = "16px", fillColor = "#ffffff") {
         if (!ICONS[iconName]) {
-            throw new TypeError(`Icon Name '${iconName}' doesn't exists in Vue-Form-Builder.`);
+            throw new TypeError(
+                `Icon Name '${iconName}' doesn't exists in Vue-Form-Builder.`
+            );
         }
 
         let replacedIconWithData = ICONS[iconName]
             .replace("{0}", width)
             .replace("{1}", height)
-            .replace("{2}", fillColor)
+            .replace("{2}", fillColor);
 
-        return replacedIconWithData
-    }
+        return replacedIconWithData;
+    },
 };
 
-export {
-    FormIcon
-}
+export { FormIcon };

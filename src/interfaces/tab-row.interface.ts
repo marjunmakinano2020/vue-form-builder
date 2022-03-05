@@ -1,6 +1,5 @@
-
 export interface TabRow {
-    tabName: string
-    tabIcon?: string
-    defaultChecked: boolean
+    tabName: string;
+    tabIcon?: string;
+    defaultChecked: boolean;
 }

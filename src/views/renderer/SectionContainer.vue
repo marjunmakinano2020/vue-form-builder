@@ -14,27 +14,26 @@
 </template>
 
 <script>
-    import {SECTION_TYPES} from "@/configs/section";
+import { SECTION_TYPES } from "@/configs/section";
 
-    export default {
-        name: "SectionContainer",
+export default {
+    name: "SectionContainer",
 
-        props: {
-            section: Object,
-            rows: Object,
-            controls: Object,
-            valueContainer: Object,
-            validationErrors: Object,
-            readOnly: Boolean,
+    props: {
+        section: Object,
+        rows: Object,
+        controls: Object,
+        valueContainer: Object,
+        validationErrors: Object,
+        readOnly: Boolean,
+    },
+
+    computed: {
+        sectionViewComponent() {
+            return SECTION_TYPES[this.section.type].rendererView;
         },
-
-        computed: {
-            sectionViewComponent() {
-                return SECTION_TYPES[this.section.type].rendererView
-            }
-        },
-    }
+    },
+};
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

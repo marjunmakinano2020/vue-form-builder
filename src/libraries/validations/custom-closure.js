@@ -13,9 +13,11 @@ export default function customClosureRule(
     customClosures
 ) {
     // since there no closure registered, no need to run and it always true
-    if (typeof customClosures[customClosureName] !== 'function') {
-        console.error(`Custom Validation Closure ${customClosureName} does not exists. Bypassed`);
-        return true
+    if (typeof customClosures[customClosureName] !== "function") {
+        console.error(
+            `Custom Validation Closure ${customClosureName} does not exists. Bypassed`
+        );
+        return true;
     }
 
     const closure = customClosures[customClosureName];
@@ -27,8 +29,8 @@ export default function customClosureRule(
 
     // because it might be null/undefined => falsy will be false
     if (!result) {
-        return false
+        return false;
     }
 
-    return true
+    return true;
 }

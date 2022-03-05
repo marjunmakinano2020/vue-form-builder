@@ -1,9 +1,8 @@
-import {STYLE_INJECTION_MIXIN} from "@/mixins/style-injection-mixin";
+import { STYLE_INJECTION_MIXIN } from "@/mixins/style-injection-mixin";
 import IconTooltip from "@/views/builder/misc/IconTooltip";
 
-
 const CONTROL_SPECIAL_CONFIG_MIXIN = {
-    components: {IconTooltip},
+    components: { IconTooltip },
     mixins: [STYLE_INJECTION_MIXIN],
 
     props: {
@@ -12,7 +11,7 @@ const CONTROL_SPECIAL_CONFIG_MIXIN = {
          */
         control: {
             type: Object,
-            required: true
+            required: true,
         },
 
         /**
@@ -20,12 +19,9 @@ const CONTROL_SPECIAL_CONFIG_MIXIN = {
          */
         formData: {
             type: Object,
-            required: true
-        }
+            required: true,
+        },
     },
+};
 
-}
-
-export{
-    CONTROL_SPECIAL_CONFIG_MIXIN
-}
+export { CONTROL_SPECIAL_CONFIG_MIXIN };

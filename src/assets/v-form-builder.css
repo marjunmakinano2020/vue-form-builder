@@ -21,7 +21,6 @@
     padding-right: 15px;
 }
 
-
 .mr-15 {
     margin-right: 15px;
 }
@@ -56,14 +55,14 @@
 
 .vue-form-builder .copyright-text {
     padding-top: 20px;
-    color: rgba(0, 0, 0, .4);
+    color: rgba(0, 0, 0, 0.4);
     font-size: 13px;
     text-align: center;
 }
 
 .vue-form-builder .add-section-container {
     margin-top: 30px;
-    border: 3px rgba(0, 0, 0, .4) dotted;
+    border: 3px rgba(0, 0, 0, 0.4) dotted;
     padding: 40px;
     user-select: none;
     font-size: 18px;
@@ -76,11 +75,11 @@
     cursor: pointer;
 }
 
-.vue-form-builder .add-section-container>p {
+.vue-form-builder .add-section-container > p {
     margin: 0;
 }
 
-.vue-form-builder .add-section-container:hover>p {
+.vue-form-builder .add-section-container:hover > p {
     font-weight: bold;
 }
 
@@ -121,7 +120,7 @@
     display: block;
 }
 
-.vue-form-builder .buttons>button {
+.vue-form-builder .buttons > button {
     margin-right: 5px;
 }
 
@@ -142,13 +141,12 @@
     margin-bottom: 5px;
 }
 
-
 .vue-form-builder .sidebar-form-configuration .headline-block h5 {
     font-size: 16px;
 }
 
 .vue-form-builder .row-block {
-    background-color: rgba(0, 0, 0, .2);
+    background-color: rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     padding: 40px 20px;
     margin: 15px;
@@ -163,7 +161,7 @@
 .vue-form-builder .add-row-container,
 .vue-form-builder .add-control-container {
     margin-top: 40px;
-    border: 3px rgba(0, 0, 0, .4) dotted;
+    border: 3px rgba(0, 0, 0, 0.4) dotted;
     padding: 40px;
     user-select: none;
     font-size: 18px;
@@ -200,7 +198,6 @@
     transition: all 0.2s ease-in-out;
 }
 
-
 .vue-form-builder .control-view:hover {
     border: 1px solid #bdc3c7;
     -webkit-transition: all 0.2s ease-in-out;
@@ -222,7 +219,7 @@
 .vue-form-builder .control-list-container.empty {
     border: 3px dotted #000;
     padding: 50px 0;
-    color: rgba(0, 0, 0, .4);
+    color: rgba(0, 0, 0, 0.4);
     font-size: 14px;
     text-align: center;
 }
@@ -332,7 +329,7 @@
     overflow-x: hidden;
     padding-top: 60px;
     transition: 0.5s;
-    border-left: 1px solid rgba(0, 0, 0, .3)
+    border-left: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .vue-form-builder .sidebar .close {
@@ -345,7 +342,7 @@
 }
 
 body {
-    transition: margin-left .5s;
+    transition: margin-left 0.5s;
     /* If you want a transition effect */
 }
 
@@ -400,7 +397,7 @@ body {
     border: 1px solid #dc3545;
 }
 
-.vue-form-renderer .control-view div.is-invalid~.invalid-feedback {
+.vue-form-renderer .control-view div.is-invalid ~ .invalid-feedback {
     display: block;
 }
 
@@ -496,23 +493,24 @@ body {
     --litepickerButtonResetBtn: #909090;
     --litepickerButtonResetBtnHover: #2196f3;
     --litepickerHighlightedDayColor: #333;
-    --litepickerHighlightedDayBg: #ffeb3b
+    --litepickerHighlightedDayBg: #ffeb3b;
 }
 
 .show-week-numbers {
-    --litepickerMonthWidth: calc(var(--litepickerDayWidth) * 8)
+    --litepickerMonthWidth: calc(var(--litepickerDayWidth) * 8);
 }
 
 .litepicker {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif;
     font-size: 0.8em;
-    display: none
+    display: none;
 }
 
 .litepicker .container__main {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex
+    display: flex;
 }
 
 .litepicker .container__months {
@@ -527,31 +525,37 @@ body {
     box-shadow: 0 0 5px #ddd;
     width: calc(var(--litepickerMonthWidth) + 10px);
     -webkit-box-sizing: content-box;
-    box-sizing: content-box
+    box-sizing: content-box;
 }
 
 .litepicker .container__months.columns-2 {
-    width: calc((var(--litepickerMonthWidth) * 2) + 20px)
+    width: calc((var(--litepickerMonthWidth) * 2) + 20px);
 }
 
 .litepicker .container__months.columns-3 {
-    width: calc((var(--litepickerMonthWidth) * 3) + 30px)
+    width: calc((var(--litepickerMonthWidth) * 3) + 30px);
 }
 
 .litepicker .container__months.columns-4 {
-    width: calc((var(--litepickerMonthWidth) * 4) + 40px)
+    width: calc((var(--litepickerMonthWidth) * 4) + 40px);
 }
 
-.litepicker .container__months.split-view .month-item-header .button-previous-month,
-.litepicker .container__months.split-view .month-item-header .button-next-month {
-    visibility: visible
+.litepicker
+    .container__months.split-view
+    .month-item-header
+    .button-previous-month,
+.litepicker
+    .container__months.split-view
+    .month-item-header
+    .button-next-month {
+    visibility: visible;
 }
 
 .litepicker .container__months .month-item {
     padding: 5px;
     width: var(--litepickerMonthWidth);
     -webkit-box-sizing: content-box;
-    box-sizing: content-box
+    box-sizing: content-box;
 }
 
 .litepicker .container__months .month-item-header {
@@ -567,39 +571,39 @@ body {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    color: var(--litepickerMonthHeaderTextColor)
+    color: var(--litepickerMonthHeaderTextColor);
 }
 
 .litepicker .container__months .month-item-header div {
     -webkit-box-flex: 1;
     -ms-flex: 1;
-    flex: 1
+    flex: 1;
 }
 
-.litepicker .container__months .month-item-header div>.month-item-name {
-    margin-right: 5px
+.litepicker .container__months .month-item-header div > .month-item-name {
+    margin-right: 5px;
 }
 
-.litepicker .container__months .month-item-header div>.month-item-year {
-    padding: 0
+.litepicker .container__months .month-item-header div > .month-item-year {
+    padding: 0;
 }
 
 .litepicker .container__months .month-item-header .reset-button {
-    color: var(--litepickerButtonResetBtn)
+    color: var(--litepickerButtonResetBtn);
 }
 
-.litepicker .container__months .month-item-header .reset-button>svg,
-.litepicker .container__months .month-item-header .reset-button>img {
+.litepicker .container__months .month-item-header .reset-button > svg,
+.litepicker .container__months .month-item-header .reset-button > img {
     fill: var(--litepickerButtonResetBtn);
-    pointer-events: none
+    pointer-events: none;
 }
 
 .litepicker .container__months .month-item-header .reset-button:hover {
-    color: var(--litepickerButtonResetBtnHover)
+    color: var(--litepickerButtonResetBtnHover);
 }
 
-.litepicker .container__months .month-item-header .reset-button:hover>svg {
-    fill: var(--litepickerButtonResetBtnHover)
+.litepicker .container__months .month-item-header .reset-button:hover > svg {
+    fill: var(--litepickerButtonResetBtnHover);
 }
 
 .litepicker .container__months .month-item-header .button-previous-month,
@@ -611,25 +615,33 @@ body {
     border-radius: 3px;
     -webkit-transition: color 0.3s, border 0.3s;
     transition: color 0.3s, border 0.3s;
-    cursor: default
+    cursor: default;
 }
 
-.litepicker .container__months .month-item-header .button-previous-month>svg,
-.litepicker .container__months .month-item-header .button-previous-month>img,
-.litepicker .container__months .month-item-header .button-next-month>svg,
-.litepicker .container__months .month-item-header .button-next-month>img {
+.litepicker .container__months .month-item-header .button-previous-month > svg,
+.litepicker .container__months .month-item-header .button-previous-month > img,
+.litepicker .container__months .month-item-header .button-next-month > svg,
+.litepicker .container__months .month-item-header .button-next-month > img {
     fill: var(--litepickerMonthButton);
-    pointer-events: none
+    pointer-events: none;
 }
 
 .litepicker .container__months .month-item-header .button-previous-month:hover,
 .litepicker .container__months .month-item-header .button-next-month:hover {
-    color: var(--litepickerMonthButtonHover)
+    color: var(--litepickerMonthButtonHover);
 }
 
-.litepicker .container__months .month-item-header .button-previous-month:hover>svg,
-.litepicker .container__months .month-item-header .button-next-month:hover>svg {
-    fill: var(--litepickerMonthButtonHover)
+.litepicker
+    .container__months
+    .month-item-header
+    .button-previous-month:hover
+    > svg,
+.litepicker
+    .container__months
+    .month-item-header
+    .button-next-month:hover
+    > svg {
+    fill: var(--litepickerMonthButtonHover);
 }
 
 .litepicker .container__months .month-item-weekdays-row {
@@ -640,33 +652,36 @@ body {
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start;
-    color: var(--litepickerMonthWeekdayColor)
+    color: var(--litepickerMonthWeekdayColor);
 }
 
-.litepicker .container__months .month-item-weekdays-row>div {
+.litepicker .container__months .month-item-weekdays-row > div {
     padding: 5px 0;
     font-size: 85%;
     -webkit-box-flex: 1;
     -ms-flex: 1;
     flex: 1;
     width: var(--litepickerDayWidth);
-    text-align: center
+    text-align: center;
 }
 
 .litepicker .container__months .month-item:first-child .button-previous-month {
-    visibility: visible
+    visibility: visible;
 }
 
 .litepicker .container__months .month-item:last-child .button-next-month {
-    visibility: visible
+    visibility: visible;
 }
 
-.litepicker .container__months .month-item.no-previous-month .button-previous-month {
-    visibility: hidden
+.litepicker
+    .container__months
+    .month-item.no-previous-month
+    .button-previous-month {
+    visibility: hidden;
 }
 
 .litepicker .container__months .month-item.no-next-month .button-next-month {
-    visibility: hidden
+    visibility: hidden;
 }
 
 .litepicker .container__days {
@@ -681,13 +696,13 @@ body {
     justify-content: flex-start;
     text-align: center;
     -webkit-box-sizing: content-box;
-    box-sizing: content-box
+    box-sizing: content-box;
 }
 
-.litepicker .container__days>div,
-.litepicker .container__days>a {
+.litepicker .container__days > div,
+.litepicker .container__days > a {
     padding: 5px 0;
-    width: var(--litepickerDayWidth)
+    width: var(--litepickerDayWidth);
 }
 
 .litepicker .container__days .day-item {
@@ -697,44 +712,44 @@ body {
     border-radius: 3px;
     -webkit-transition: color 0.3s, border 0.3s;
     transition: color 0.3s, border 0.3s;
-    cursor: default
+    cursor: default;
 }
 
 .litepicker .container__days .day-item:hover {
     color: var(--litepickerDayColorHover);
     -webkit-box-shadow: inset 0 0 0 1px var(--litepickerDayColorHover);
-    box-shadow: inset 0 0 0 1px var(--litepickerDayColorHover)
+    box-shadow: inset 0 0 0 1px var(--litepickerDayColorHover);
 }
 
 .litepicker .container__days .day-item.is-today {
-    color: var(--litepickerDayIsTodayColor)
+    color: var(--litepickerDayIsTodayColor);
 }
 
 .litepicker .container__days .day-item.is-locked {
-    color: var(--litepickerDayIsLockedColor)
+    color: var(--litepickerDayIsLockedColor);
 }
 
 .litepicker .container__days .day-item.is-locked:hover {
     color: var(--litepickerDayIsLockedColor);
     -webkit-box-shadow: none;
     box-shadow: none;
-    cursor: default
+    cursor: default;
 }
 
 .litepicker .container__days .day-item.is-booked {
-    color: var(--litepickerDayIsBookedColor)
+    color: var(--litepickerDayIsBookedColor);
 }
 
 .litepicker .container__days .day-item.is-booked:hover {
     color: var(--litepickerDayIsBookedColor);
     -webkit-box-shadow: none;
     box-shadow: none;
-    cursor: default
+    cursor: default;
 }
 
 .litepicker .container__days .day-item.is-in-range {
     background-color: var(--litepickerDayIsInRange);
-    border-radius: 0
+    border-radius: 0;
 }
 
 .litepicker .container__days .day-item.is-start-date {
@@ -743,14 +758,14 @@ body {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     border-top-right-radius: 0;
-    border-bottom-right-radius: 0
+    border-bottom-right-radius: 0;
 }
 
 .litepicker .container__days .day-item.is-start-date.is-flipped {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px
+    border-bottom-right-radius: 5px;
 }
 
 .litepicker .container__days .day-item.is-end-date {
@@ -759,26 +774,26 @@ body {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px
+    border-bottom-right-radius: 5px;
 }
 
 .litepicker .container__days .day-item.is-end-date.is-flipped {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     border-top-right-radius: 0;
-    border-bottom-right-radius: 0
+    border-bottom-right-radius: 0;
 }
 
 .litepicker .container__days .day-item.is-start-date.is-end-date {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px
+    border-bottom-right-radius: 5px;
 }
 
 .litepicker .container__days .day-item.is-highlighted {
     color: var(--litepickerHighlightedDayColor);
-    background-color: var(--litepickerHighlightedDayBg)
+    background-color: var(--litepickerHighlightedDayBg);
 }
 
 .litepicker .container__days .week-number {
@@ -792,7 +807,7 @@ body {
     -ms-flex-pack: center;
     justify-content: center;
     color: #9e9e9e;
-    font-size: 85%
+    font-size: 85%;
 }
 
 .litepicker .container__footer {
@@ -803,12 +818,12 @@ body {
     -webkit-box-shadow: inset 0px 3px 3px 0px #ddd;
     box-shadow: inset 0px 3px 3px 0px #ddd;
     border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px
+    border-bottom-right-radius: 5px;
 }
 
 .litepicker .container__footer .preview-date-range {
     margin-right: 10px;
-    font-size: 90%
+    font-size: 90%;
 }
 
 .litepicker .container__footer .button-cancel {
@@ -816,12 +831,12 @@ body {
     color: var(--litepickerButtonCancelColor);
     border: 0;
     padding: 3px 7px 4px;
-    border-radius: 3px
+    border-radius: 3px;
 }
 
-.litepicker .container__footer .button-cancel>svg,
-.litepicker .container__footer .button-cancel>img {
-    pointer-events: none
+.litepicker .container__footer .button-cancel > svg,
+.litepicker .container__footer .button-cancel > img {
+    pointer-events: none;
 }
 
 .litepicker .container__footer .button-apply {
@@ -831,16 +846,16 @@ body {
     padding: 3px 7px 4px;
     border-radius: 3px;
     margin-left: 10px;
-    margin-right: 10px
+    margin-right: 10px;
 }
 
 .litepicker .container__footer .button-apply:disabled {
-    opacity: 0.7
+    opacity: 0.7;
 }
 
-.litepicker .container__footer .button-apply>svg,
-.litepicker .container__footer .button-apply>img {
-    pointer-events: none
+.litepicker .container__footer .button-apply > svg,
+.litepicker .container__footer .button-apply > img {
+    pointer-events: none;
 }
 
 .litepicker .container__tooltip {
@@ -854,7 +869,7 @@ body {
     white-space: nowrap;
     font-size: 11px;
     pointer-events: none;
-    visibility: hidden
+    visibility: hidden;
 }
 
 .litepicker .container__tooltip:before {
@@ -864,7 +879,7 @@ body {
     border-top: 5px solid rgba(0, 0, 0, 0.12);
     border-right: 5px solid transparent;
     border-left: 5px solid transparent;
-    content: ""
+    content: "";
 }
 
 .litepicker .container__tooltip:after {
@@ -874,11 +889,11 @@ body {
     border-top: 4px solid #fff;
     border-right: 4px solid transparent;
     border-left: 4px solid transparent;
-    content: ""
+    content: "";
 }
 
 .litepicker-open {
-    overflow: hidden
+    overflow: hidden;
 }
 
 .litepicker-backdrop {
@@ -889,12 +904,13 @@ body {
     top: 0;
     right: 0;
     bottom: 0;
-    left: 0
+    left: 0;
 }
 
 /** CSS compatibility with vuematerial */
 html.md-theme-default .container-fluid.md-layout.form-padding.vue-form-builder,
-html.md-theme-default .container-fluid.md-layout.form-padding.vue-form-renderer {
+html.md-theme-default
+    .container-fluid.md-layout.form-padding.vue-form-renderer {
     margin: auto;
     display: block !important;
 }
@@ -913,9 +929,9 @@ html.md-theme-default .vue-form-builder .section-container {
 .md-button.md-info:active:hover,
 .md-button.md-info:focus,
 .md-button.md-info:hover,
-.open>.md-button.md-info.dropdown-toggle,
-.open>.md-button.md-info.dropdown-toggle:focus,
-.open>.md-button.md-info.dropdown-toggle:hover {
+.open > .md-button.md-info.dropdown-toggle,
+.open > .md-button.md-info.dropdown-toggle:focus,
+.open > .md-button.md-info.dropdown-toggle:hover {
     background-color: #00bcd4 !important;
     color: #fff !important;
 }
@@ -942,9 +958,9 @@ html.md-theme-default .vue-form-builder .section-container {
 .md-button.md-success:active:hover,
 .md-button.md-success:focus,
 .md-button.md-success:hover,
-.open>.md-button.md-success.dropdown-toggle,
-.open>.md-button.md-success.dropdown-toggle:focus,
-.open>.md-button.md-success.dropdown-toggle:hover {
+.open > .md-button.md-success.dropdown-toggle,
+.open > .md-button.md-success.dropdown-toggle:focus,
+.open > .md-button.md-success.dropdown-toggle:hover {
     background-color: #4caf50 !important;
     color: #fff !important;
 }
@@ -958,9 +974,9 @@ html.md-theme-default .vue-form-builder .section-container {
 .md-button.md-warning:active:hover,
 .md-button.md-warning:focus,
 .md-button.md-warning:hover,
-.open>.md-button.md-warning.dropdown-toggle,
-.open>.md-button.md-warning.dropdown-toggle:focus,
-.open>.md-button.md-warning.dropdown-toggle:hover {
+.open > .md-button.md-warning.dropdown-toggle,
+.open > .md-button.md-warning.dropdown-toggle:focus,
+.open > .md-button.md-warning.dropdown-toggle:hover {
     background-color: #ff9800 !important;
     color: #fff !important;
 }
@@ -991,10 +1007,10 @@ html.md-theme-default .vue-form-builder a.md-list-item-action {
 html.md-theme-default .vue-form-builder .md-list-item {
     position: relative;
     display: block;
-    padding: .75rem 1.25rem;
+    padding: 0.75rem 1.25rem;
     margin-bottom: -1px;
     background-color: #fff;
-    border: 1px solid rgba(0, 0, 0, .125);
+    border: 1px solid rgba(0, 0, 0, 0.125);
 }
 
 @media (max-width: 768px) {
@@ -1023,7 +1039,7 @@ html.md-theme-default .vue-form-builder .md-list-item {
 .tabs ul li label {
     font-weight: bold;
     font-size: 18px;
-    color: #428BFF;
+    color: #428bff;
 }
 .tabs ul {
     list-style-type: none;
@@ -1077,15 +1093,19 @@ html.md-theme-default .vue-form-builder .md-list-item {
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
-.tabs ul li label:hover, .tabs ul li label:focus, .tabs ul li label:active {
+.tabs ul li label:hover,
+.tabs ul li label:focus,
+.tabs ul li label:active {
     outline: 0;
     color: #bec5cf;
 }
-.tabs ul li label:hover svg, .tabs ul li label:focus svg, .tabs ul li label:active svg {
+.tabs ul li label:hover svg,
+.tabs ul li label:focus svg,
+.tabs ul li label:active svg {
     fill: #bec5cf;
 }
 .tabs ul li label.add-row {
-    color:black;
+    color: black;
 }
 .tabs ul li label.add-row svg {
     fill: #27ae60;
@@ -1102,7 +1122,7 @@ html.md-theme-default .vue-form-builder .md-list-item {
     max-width: 100%;
     margin: 0 auto;
     height: 4px;
-    background: #428BFF;
+    background: #428bff;
     border-radius: 1px;
 }
 .tabs .content {
@@ -1123,7 +1143,7 @@ html.md-theme-default .vue-form-builder .md-list-item {
     line-height: 1.4;
 }
 .tabs .content section h2 {
-    color: #428BFF;
+    color: #428bff;
     display: none;
 }
 .tabs .content section h2::after {
@@ -1132,19 +1152,32 @@ html.md-theme-default .vue-form-builder .md-list-item {
     display: block;
     width: 30px;
     height: 3px;
-    background: #428BFF;
+    background: #428bff;
     margin-top: 5px;
     left: 1px;
 }
-.tabs input[name="tab-control"]:nth-of-type(1):checked ~ ul > li:nth-child(1) > label {
+.tabs
+    input[name="tab-control"]:nth-of-type(1):checked
+    ~ ul
+    > li:nth-child(1)
+    > label {
     cursor: default;
-    color: #428BFF;
+    color: #428bff;
 }
-.tabs input[name="tab-control"]:nth-of-type(1):checked ~ ul > li:nth-child(1) > label svg {
-    fill: #428BFF;
+.tabs
+    input[name="tab-control"]:nth-of-type(1):checked
+    ~ ul
+    > li:nth-child(1)
+    > label
+    svg {
+    fill: #428bff;
 }
 @media (max-width: 600px) {
-    .tabs input[name="tab-control"]:nth-of-type(1):checked ~ ul > li:nth-child(1) > label {
+    .tabs
+        input[name="tab-control"]:nth-of-type(1):checked
+        ~ ul
+        > li:nth-child(1)
+        > label {
         background: rgba(0, 0, 0, 0.08);
     }
 }
@@ -1152,18 +1185,34 @@ html.md-theme-default .vue-form-builder .md-list-item {
     -webkit-transform: translateX(0%);
     transform: translateX(0%);
 }
-.tabs input[name="tab-control"]:nth-of-type(1):checked ~ .content > section:nth-child(1) {
+.tabs
+    input[name="tab-control"]:nth-of-type(1):checked
+    ~ .content
+    > section:nth-child(1) {
     display: block;
 }
-.tabs input[name="tab-control"]:nth-of-type(2):checked ~ ul > li:nth-child(2) > label {
+.tabs
+    input[name="tab-control"]:nth-of-type(2):checked
+    ~ ul
+    > li:nth-child(2)
+    > label {
     cursor: default;
-    color: #428BFF;
+    color: #428bff;
 }
-.tabs input[name="tab-control"]:nth-of-type(2):checked ~ ul > li:nth-child(2) > label svg {
-    fill: #428BFF;
+.tabs
+    input[name="tab-control"]:nth-of-type(2):checked
+    ~ ul
+    > li:nth-child(2)
+    > label
+    svg {
+    fill: #428bff;
 }
 @media (max-width: 600px) {
-    .tabs input[name="tab-control"]:nth-of-type(2):checked ~ ul > li:nth-child(2) > label {
+    .tabs
+        input[name="tab-control"]:nth-of-type(2):checked
+        ~ ul
+        > li:nth-child(2)
+        > label {
         background: rgba(0, 0, 0, 0.08);
     }
 }
@@ -1171,18 +1220,34 @@ html.md-theme-default .vue-form-builder .md-list-item {
     -webkit-transform: translateX(100%);
     transform: translateX(100%);
 }
-.tabs input[name="tab-control"]:nth-of-type(2):checked ~ .content > section:nth-child(2) {
+.tabs
+    input[name="tab-control"]:nth-of-type(2):checked
+    ~ .content
+    > section:nth-child(2) {
     display: block;
 }
-.tabs input[name="tab-control"]:nth-of-type(3):checked ~ ul > li:nth-child(3) > label {
+.tabs
+    input[name="tab-control"]:nth-of-type(3):checked
+    ~ ul
+    > li:nth-child(3)
+    > label {
     cursor: default;
-    color: #428BFF;
+    color: #428bff;
 }
-.tabs input[name="tab-control"]:nth-of-type(3):checked ~ ul > li:nth-child(3) > label svg {
-    fill: #428BFF;
+.tabs
+    input[name="tab-control"]:nth-of-type(3):checked
+    ~ ul
+    > li:nth-child(3)
+    > label
+    svg {
+    fill: #428bff;
 }
 @media (max-width: 600px) {
-    .tabs input[name="tab-control"]:nth-of-type(3):checked ~ ul > li:nth-child(3) > label {
+    .tabs
+        input[name="tab-control"]:nth-of-type(3):checked
+        ~ ul
+        > li:nth-child(3)
+        > label {
         background: rgba(0, 0, 0, 0.08);
     }
 }
@@ -1190,18 +1255,34 @@ html.md-theme-default .vue-form-builder .md-list-item {
     -webkit-transform: translateX(200%);
     transform: translateX(200%);
 }
-.tabs input[name="tab-control"]:nth-of-type(3):checked ~ .content > section:nth-child(3) {
+.tabs
+    input[name="tab-control"]:nth-of-type(3):checked
+    ~ .content
+    > section:nth-child(3) {
     display: block;
 }
-.tabs input[name="tab-control"]:nth-of-type(4):checked ~ ul > li:nth-child(4) > label {
+.tabs
+    input[name="tab-control"]:nth-of-type(4):checked
+    ~ ul
+    > li:nth-child(4)
+    > label {
     cursor: default;
-    color: #428BFF;
+    color: #428bff;
 }
-.tabs input[name="tab-control"]:nth-of-type(4):checked ~ ul > li:nth-child(4) > label svg {
-    fill: #428BFF;
+.tabs
+    input[name="tab-control"]:nth-of-type(4):checked
+    ~ ul
+    > li:nth-child(4)
+    > label
+    svg {
+    fill: #428bff;
 }
 @media (max-width: 600px) {
-    .tabs input[name="tab-control"]:nth-of-type(4):checked ~ ul > li:nth-child(4) > label {
+    .tabs
+        input[name="tab-control"]:nth-of-type(4):checked
+        ~ ul
+        > li:nth-child(4)
+        > label {
         background: rgba(0, 0, 0, 0.08);
     }
 }
@@ -1209,7 +1290,10 @@ html.md-theme-default .vue-form-builder .md-list-item {
     -webkit-transform: translateX(300%);
     transform: translateX(300%);
 }
-.tabs input[name="tab-control"]:nth-of-type(4):checked ~ .content > section:nth-child(4) {
+.tabs
+    input[name="tab-control"]:nth-of-type(4):checked
+    ~ .content
+    > section:nth-child(4) {
     display: block;
 }
 @-webkit-keyframes content {
@@ -1279,10 +1363,10 @@ html.md-theme-default .vue-form-builder .md-list-item {
     top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
-    padding-top:100px;
+    padding-top: 100px;
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
 #vfb-global-modal .modal-header {
@@ -1308,9 +1392,9 @@ html.md-theme-default .vue-form-builder .md-list-item {
     padding: 0;
     border: 1px solid #888;
     width: 50%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     animation-name: animatetop;
-    animation-duration: 0.4s
+    animation-duration: 0.4s;
 }
 
 #vfb-global-modal .close:hover,
@@ -1322,6 +1406,12 @@ html.md-theme-default .vue-form-builder .md-list-item {
 
 /* Add Animation */
 @keyframes animatetop {
-    from {top: -300px; opacity: 0}
-    to {top: 0; opacity: 1}
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
 }

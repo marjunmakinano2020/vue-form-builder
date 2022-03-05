@@ -1,12 +1,9 @@
-import {STYLES} from "@/configs/styles";
-
+import { STYLES } from "@/configs/styles";
 
 const STYLE_INJECTION_MIXIN = {
     computed: {
-        styles: () => STYLES
+        styles: () => STYLES,
     },
 };
 
-export {
-    STYLE_INJECTION_MIXIN
-}
+export { STYLE_INJECTION_MIXIN };

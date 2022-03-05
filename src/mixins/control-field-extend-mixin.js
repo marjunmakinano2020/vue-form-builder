@@ -2,7 +2,7 @@
  * Base Setup for any `controls` of Control in Vue-Form-Builder
  * @example InputControl - use the mixin. I'll keep our code extendable as possible
  */
-import {STYLE_INJECTION_MIXIN} from "@/mixins/style-injection-mixin";
+import { STYLE_INJECTION_MIXIN } from "@/mixins/style-injection-mixin";
 
 const EMIT_EVENT = "change";
 
@@ -13,7 +13,7 @@ const CONTROL_FIELD_EXTEND_MIXIN = {
         // control configuration
         control: {
             type: Object,
-            required: true
+            required: true,
         },
 
         // v-model value
@@ -21,8 +21,8 @@ const CONTROL_FIELD_EXTEND_MIXIN = {
     },
 
     // global data-field - available to override
-    data: () =>({
-        stopDefaultValueAssign: false
+    data: () => ({
+        stopDefaultValueAssign: false,
     }),
 
     /**
@@ -31,7 +31,7 @@ const CONTROL_FIELD_EXTEND_MIXIN = {
      */
     model: {
         event: EMIT_EVENT,
-        props: "value"
+        props: "value",
     },
 
     watch: {
@@ -40,8 +40,8 @@ const CONTROL_FIELD_EXTEND_MIXIN = {
          * @param val
          */
         value(val) {
-            this.setValue(val)
-        }
+            this.setValue(val);
+        },
     },
 
     methods: {
@@ -50,14 +50,16 @@ const CONTROL_FIELD_EXTEND_MIXIN = {
          * @param val
          */
         updateValue(val) {
-            this.$emit(EMIT_EVENT, val)
+            this.$emit(EMIT_EVENT, val);
         },
 
         /**
          * Need-To-Override Method - Set Value.
          * Set value from parent to the current field/control
          */
-        setValue(val) {return val} // NEED TO OVERRIDE
+        setValue(val) {
+            return val;
+        }, // NEED TO OVERRIDE
     },
 
     computed: {
@@ -68,8 +70,8 @@ const CONTROL_FIELD_EXTEND_MIXIN = {
         controlFieldClass() {
             return [
                 this.styles.FORM.FORM_CONTROL,
-                this.control.additionalFieldClass
-            ]
+                this.control.additionalFieldClass,
+            ];
         },
 
         /**
@@ -77,8 +79,8 @@ const CONTROL_FIELD_EXTEND_MIXIN = {
          * @returns {*|string|string}
          */
         controlName() {
-            return this.control.name || this.control.uniqueId
-        }
+            return this.control.name || this.control.uniqueId;
+        },
     },
 
     /**
@@ -91,11 +93,9 @@ const CONTROL_FIELD_EXTEND_MIXIN = {
             !this.value &&
             this.control.defaultValue
         ) {
-            this.updateValue(this.control.defaultValue)
+            this.updateValue(this.control.defaultValue);
         }
     },
-}
+};
 
-export {
-    CONTROL_FIELD_EXTEND_MIXIN
-}
+export { CONTROL_FIELD_EXTEND_MIXIN };

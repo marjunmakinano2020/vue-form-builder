@@ -7,11 +7,11 @@
  *  @author Phat Tran <phattranminh96@gmail.com>
  */
 
-import {createNewSection, SECTION_DEFAULT_DATA} from "@/configs/section";
-import {dataApplier} from "@/libraries/applier";
+import { createNewSection, SECTION_DEFAULT_DATA } from "@/configs/section";
+import { dataApplier } from "@/libraries/applier";
 
 const FORM_BUILDER_METHODS = {
-    data:() => ({
+    data: () => ({
         sortedSections: [],
     }),
 
@@ -20,8 +20,12 @@ const FORM_BUILDER_METHODS = {
          * Do Mapping Before Rendering/Showing Up
          */
         mapping(value) {
-            this.formData = Object.assign({}, this.formData, dataApplier(value))
-            this.doSortSection()
+            this.formData = Object.assign(
+                {},
+                this.formData,
+                dataApplier(value)
+            );
+            this.doSortSection();
         },
 
         /**
@@ -36,11 +40,15 @@ const FORM_BUILDER_METHODS = {
          */
         addSection(sectionType) {
             let newSortOrder = Object.keys(this.formData.sections).length + 1;
-            let sectionObject = createNewSection(sectionType, newSortOrder)
+            let sectionObject = createNewSection(sectionType, newSortOrder);
 
             // we have to push it from $set otherwise it will not reactive (LOL)
-            this.$set(this.formData.sections, sectionObject.uniqueId, sectionObject)
-            this.doSortSection()
+            this.$set(
+                this.formData.sections,
+                sectionObject.uniqueId,
+                sectionObject
+            );
+            this.doSortSection();
         },
 
         /**
@@ -49,17 +57,17 @@ const FORM_BUILDER_METHODS = {
         doSortSection() {
             this.sortedSections = [];
 
-            for (let [sectionId, sectionObject] of Object.entries(this.formData.sections)) {
-                this.sortedSections.push(sectionObject)
+            for (let [sectionId, sectionObject] of Object.entries(
+                this.formData.sections
+            )) {
+                this.sortedSections.push(sectionObject);
             }
 
             this.sortedSections.sort((a, b) => {
                 return a.sortOrder - b.sortOrder;
-            })
-        }
+            });
+        },
     },
-}
+};
 
-export {
-    FORM_BUILDER_METHODS
-}
+export { FORM_BUILDER_METHODS };

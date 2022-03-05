@@ -4,17 +4,17 @@
  */
 const RADIO_CHECKBOX_STYLE = {
     line: {
-        val: 'line',
-        description: "Line by Line"
+        val: "line",
+        description: "Line by Line",
     },
     next: {
-        val: 'next',
-        description: "Next to each others"
+        val: "next",
+        description: "Next to each others",
     },
     bothSide: {
         val: "bothSide",
         description: "Stay on each sides in a row (Left - Right)",
-    }
+    },
 };
 
 /**
@@ -23,17 +23,17 @@ const RADIO_CHECKBOX_STYLE = {
  */
 const RADIO_CHECKBOX_POSITION = {
     left: {
-        val: 'left',
-        description: "Left"
+        val: "left",
+        description: "Left",
     },
     center: {
-        val: 'center',
-        description: 'Center',
+        val: "center",
+        description: "Center",
     },
     right: {
-        val: 'right',
-        description: 'Right'
-    }
+        val: "right",
+        description: "Right",
+    },
 };
 
 /**
@@ -43,13 +43,13 @@ const RADIO_CHECKBOX_POSITION = {
 const DATE_PICKER_RETURN_TYPES = {
     format: {
         val: "format",
-        description: "Date String from Date Format"
+        description: "Date String from Date Format",
     },
     object: {
         val: "object",
-        description: "JS-Date Object"
-    }
-}
+        description: "JS-Date Object",
+    },
+};
 
 /**
  * Date Picker Start Date (Sunday, Monday,...) of the Week
@@ -57,33 +57,33 @@ const DATE_PICKER_RETURN_TYPES = {
 const DATE_PICKER_START_DATES = {
     monday: {
         val: 1,
-        description: "Monday"
+        description: "Monday",
     },
     tuesday: {
         val: 2,
-        description: "Tuesday"
+        description: "Tuesday",
     },
     wednesday: {
         val: 3,
-        description: "Wednesday"
+        description: "Wednesday",
     },
     thursday: {
         val: 4,
-        description: "Thursday"
+        description: "Thursday",
     },
     friday: {
         val: 5,
-        description: "Friday"
+        description: "Friday",
     },
     saturday: {
         val: 6,
-        description: "Saturday"
+        description: "Saturday",
     },
     sunday: {
         val: 0,
-        description: "Sunday"
+        description: "Sunday",
     },
-}
+};
 
 /**
  * DROPDOWN DATA MODE
@@ -92,38 +92,35 @@ const DATE_PICKER_START_DATES = {
  */
 const DROPDOWN_DATA_MODES = {
     list: {
-        val: 'list',
-        description: "Normal - Pre-Config List Items"
+        val: "list",
+        description: "Normal - Pre-Config List Items",
     },
     api: {
-        val: 'api',
+        val: "api",
         description: "API - List Items from your own API",
     },
-}
+};
 
 /**
  * File Upload Modes
  */
 const FILE_UPLOAD_MODES = {
     normal: {
-        val: 'normal',
-        description: "Keep the file there for HTTP Form Request"
+        val: "normal",
+        description: "Keep the file there for HTTP Form Request",
     },
 
     preUpload: {
-        val: 'preUpload',
-        description: "Pre-Upload to your own API"
+        val: "preUpload",
+        description: "Pre-Upload to your own API",
     },
-}
+};
 
-export  {
+export {
     RADIO_CHECKBOX_POSITION,
     RADIO_CHECKBOX_STYLE,
-
     DATE_PICKER_RETURN_TYPES,
     DATE_PICKER_START_DATES,
-
     DROPDOWN_DATA_MODES,
-
-    FILE_UPLOAD_MODES
-}
+    FILE_UPLOAD_MODES,
+};

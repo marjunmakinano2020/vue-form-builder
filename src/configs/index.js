@@ -5,8 +5,6 @@
 
 const MAIN_CONSTANTS = {
     COPYRIGHT: "Vue Form Builder",
-}
+};
 
-export {
-    MAIN_CONSTANTS
-}
+export { MAIN_CONSTANTS };

@@ -1,8 +1,8 @@
 /**
  * Base extendation for the Row-View - Form-Builder
  */
-import {STYLE_INJECTION_MIXIN} from "@/mixins/style-injection-mixin";
-import draggable from 'vuedraggable'
+import { STYLE_INJECTION_MIXIN } from "@/mixins/style-injection-mixin";
+import draggable from "vuedraggable";
 import AddControlToRowControl from "@/views/builder/add-controls/AddControlToRowControl";
 import ControlView from "@/views/builder/ControlView";
 
@@ -10,7 +10,7 @@ const ROW_VIEW_MIXIN = {
     components: {
         draggable,
         AddControlToRowControl,
-        ControlView
+        ControlView,
     },
     mixins: [STYLE_INJECTION_MIXIN],
 
@@ -20,7 +20,7 @@ const ROW_VIEW_MIXIN = {
          */
         section: {
             type: Object,
-            required: true
+            required: true,
         },
 
         /**
@@ -28,7 +28,7 @@ const ROW_VIEW_MIXIN = {
          */
         row: {
             type: Object,
-            required: true
+            required: true,
         },
 
         /**
@@ -39,7 +39,7 @@ const ROW_VIEW_MIXIN = {
             required: true,
         },
 
-        permissions: Object
+        permissions: Object,
     },
 
     computed: {
@@ -47,7 +47,7 @@ const ROW_VIEW_MIXIN = {
          * Property that will be used to drag - for Control Only
          */
         dragControlHandle() {
-            return ".option-control.drag-item"
+            return ".option-control.drag-item";
         },
 
         /**
@@ -55,7 +55,7 @@ const ROW_VIEW_MIXIN = {
          * We can share this for each section/row
          */
         dragGroup() {
-            return "v-form-builder-control"
+            return "v-form-builder-control";
         },
 
         /**
@@ -65,13 +65,9 @@ const ROW_VIEW_MIXIN = {
         draggableClasses() {
             return [
                 this.styles.ROW,
-                'control-list-container',
-                (
-                    this.hasControls
-                        ? ''
-                        : 'empty'
-                )
-            ]
+                "control-list-container",
+                this.hasControls ? "" : "empty",
+            ];
         },
 
         /**
@@ -79,10 +75,8 @@ const ROW_VIEW_MIXIN = {
          * @returns {boolean}
          */
         hasControls() {
-            return this.row.controls.length > 0
-        }
+            return this.row.controls.length > 0;
+        },
     },
-}
-export {
-    ROW_VIEW_MIXIN
-}
+};
+export { ROW_VIEW_MIXIN };

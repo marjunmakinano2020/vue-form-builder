@@ -1,4 +1,4 @@
-import {ALERT_DIALOG} from "@/libraries/alert-dialog";
+import { ALERT_DIALOG } from "@/libraries/alert-dialog";
 
 const SIDEBAR_BODY_MIXIN = {
     props: {
@@ -12,7 +12,7 @@ const SIDEBAR_BODY_MIXIN = {
          * Main Form-Data from the Parent.
          * There might be some Configuration need these data.
          */
-        formData: Object
+        formData: Object,
     },
 
     data: () => ({
@@ -30,14 +30,14 @@ const SIDEBAR_BODY_MIXIN = {
          * Close the sidebar without fire any events
          */
         close() {
-            this.$emit(this.emitCloseKey, false)
+            this.$emit(this.emitCloseKey, false);
         },
 
         /**
          * Save the configuration (Actually I will close the sidebar and emit event =)) )
          */
         save(close = false) {
-            let data = this[this.dataKey]
+            let data = this[this.dataKey];
 
             // pre-validation?
             if (this.preSaveValidation) {
@@ -51,9 +51,9 @@ const SIDEBAR_BODY_MIXIN = {
             }
 
             if (close) {
-                this.$emit(this.emitSaveAndCloseKey, data)
+                this.$emit(this.emitSaveAndCloseKey, data);
             } else {
-                this.$emit(this.emitSaveKey, data)
+                this.$emit(this.emitSaveKey, data);
             }
         },
     },
@@ -64,7 +64,7 @@ const SIDEBAR_BODY_MIXIN = {
          * @returns {string}
          */
         emitCloseKey() {
-            return 'close'
+            return "close";
         },
 
         /**
@@ -72,7 +72,7 @@ const SIDEBAR_BODY_MIXIN = {
          * @returns {string}
          */
         emitSaveKey() {
-            return 'save'
+            return "save";
         },
 
         /**
@@ -80,11 +80,9 @@ const SIDEBAR_BODY_MIXIN = {
          * @returns {string}
          */
         emitSaveAndCloseKey() {
-            return 'saveAndClose'
-        }
-    }
-}
+            return "saveAndClose";
+        },
+    },
+};
 
-export {
-    SIDEBAR_BODY_MIXIN
-}
+export { SIDEBAR_BODY_MIXIN };

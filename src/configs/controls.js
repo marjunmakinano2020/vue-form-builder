@@ -2,22 +2,22 @@
  * Supported Controls in Vue-Form-Builder
  * @author Phat Tran
  */
-import {STYLES} from "@/configs/styles";
-import {HELPER} from "@/libraries/helper";
+import { STYLES } from "@/configs/styles";
+import { HELPER } from "@/libraries/helper";
 import {
-    DATE_PICKER_RETURN_TYPES, DATE_PICKER_START_DATES,
-
-    RADIO_CHECKBOX_POSITION, RADIO_CHECKBOX_STYLE,
-
+    DATE_PICKER_RETURN_TYPES,
+    DATE_PICKER_START_DATES,
+    RADIO_CHECKBOX_POSITION,
+    RADIO_CHECKBOX_STYLE,
     DROPDOWN_DATA_MODES,
 
     // FILE_UPLOAD_MODES
 } from "@/configs/control-config-enum";
 
 // Control-GUI-Component
-import InputControl from "@/views/controls/InputControl"
-import TextControl from "@/views/controls/TextControl"
-import ButtonControl from "@/views/controls/ButtonControl"
+import InputControl from "@/views/controls/InputControl";
+import TextControl from "@/views/controls/TextControl";
+import ButtonControl from "@/views/controls/ButtonControl";
 import EmptyBlockControl from "@/views/controls/EmptyBlockControl";
 import TextBlockControl from "@/views/controls/TextBlockControl";
 import LabelControl from "@/views/controls/LabelControl";
@@ -43,7 +43,7 @@ const CONTROLS = {
     input: {
         name: "Input Field",
         description: "Input text single line",
-        icon: 'editPencil', // Follow ICON in `icon-facade.js` to see how it works.
+        icon: "editPencil", // Follow ICON in `icon-facade.js` to see how it works.
 
         configData: {
             typeAttribute: "text", // date, password
@@ -88,7 +88,7 @@ const CONTROLS = {
 
         // component mapping
         fieldComponent: TextControl,
-        configComponent: TextConfigView
+        configComponent: TextConfigView,
     },
 
     // I would love to support this, but the thing is, many rich editors are too large:
@@ -110,7 +110,7 @@ const CONTROLS = {
             numberOfMonths: 1, // Number of Month(s) will be shown
             numberOfColumns: 1, // Number of Column(s) will be shown
             minDate: null, // min day (less => can't select)
-            maxDate: null,// max day (more => can't select),
+            maxDate: null, // max day (more => can't select),
 
             singleMode: true, // date or date-range
 
@@ -122,7 +122,7 @@ const CONTROLS = {
         },
 
         fieldComponent: DatePickerControl,
-        configComponent: DatePickerConfigView
+        configComponent: DatePickerConfigView,
     },
 
     // fileUpload: {
@@ -156,7 +156,6 @@ const CONTROLS = {
         fieldComponent: DropdownControl,
         configComponent: DropdownConfigView,
     },
-
 
     checkbox: {
         name: "Checkbox List",
@@ -193,7 +192,7 @@ const CONTROLS = {
         },
 
         fieldComponent: RadioCheckboxControl,
-        configComponent: RadioCheckboxConfigView
+        configComponent: RadioCheckboxConfigView,
     },
 
     fileUploader: {
@@ -219,29 +218,29 @@ const CONTROLS = {
             // special configurations
             // these will be appended when the vue-uploader-component make a request
             headers: [],
-            postData: []
+            postData: [],
         },
 
         fieldComponent: FileUploaderControl,
-        configComponent: FileUploaderConfigView
+        configComponent: FileUploaderConfigView,
     },
 
     label: {
         name: "Label",
         description: "Simple label text show up in your Form",
         disableValue: true,
-        
+
         configData: {
             forAttribute: null, // `for` for any control? (except the Label)
 
             // Override here in order to not show the Label
-            isShowLabel: false
+            isShowLabel: false,
         },
 
         // no need validation
         disableValidation: true,
         fieldComponent: LabelControl,
-        configComponent: LabelConfigView
+        configComponent: LabelConfigView,
     },
 
     button: {
@@ -265,7 +264,7 @@ const CONTROLS = {
         },
 
         fieldComponent: ButtonControl,
-        configComponent: ButtonConfigView
+        configComponent: ButtonConfigView,
     },
 
     emptyBlock: {
@@ -279,7 +278,7 @@ const CONTROLS = {
         configData: {
             // Override here in order to not show the Label
             isShowLabel: false,
-        }
+        },
     },
 
     textBlock: {
@@ -292,36 +291,36 @@ const CONTROLS = {
         configComponent: TextBlockConfigView,
 
         configData: {
-            text: ""
-        }
-    }
+            text: "",
+        },
+    },
 };
 
 const CONTROL_DEFAULT_DATA = {
     // default configuration
-    'uniqueId': '', // :id
-    'type': '', // control type...
-    'name': '', // :name
+    uniqueId: "", // :id
+    type: "", // control type...
+    name: "", // :name
 
-    'label': '',
-    'subLabel': '',
-    'isShowLabel': true,
+    label: "",
+    subLabel: "",
+    isShowLabel: true,
 
-    'placeholderText': '', // :placeholder
+    placeholderText: "", // :placeholder
 
-    'containerClass': STYLES.COLUMNS.COL4,
-    'additionalContainerClass': '', // :class for the <div> outer container
+    containerClass: STYLES.COLUMNS.COL4,
+    additionalContainerClass: "", // :class for the <div> outer container
 
-    'additionalFieldClass': '', // :class for <input> <select> ...
-    'additionalLabelClass': '', // :class for the <label>
+    additionalFieldClass: "", // :class for <input> <select> ...
+    additionalLabelClass: "", // :class for the <label>
 
-    'defaultValue': '',
+    defaultValue: "",
 
     /**
      * Validation that applied to the control
      * @var {ValidationRule[]} validations
      */
-    'validations': [],
+    validations: [],
 
     // data of the others - coming up later
 };
@@ -332,20 +331,20 @@ const CONTROL_DEFAULT_DATA = {
  * @returns {CONTROL_DEFAULT_DATA}
  */
 function createControlData(controlKey) {
-    const newData = Object.assign({}, CONTROL_DEFAULT_DATA, CONTROLS[controlKey].configData || {})
+    const newData = Object.assign(
+        {},
+        CONTROL_DEFAULT_DATA,
+        CONTROLS[controlKey].configData || {}
+    );
 
     // set default data
-    newData.label = CONTROLS[controlKey].name
-    newData.type = controlKey
+    newData.label = CONTROLS[controlKey].name;
+    newData.type = controlKey;
 
     // unique ID is a must - I used UUIDv4 => 99% Unique
-    newData.uniqueId = "control-" + HELPER.getUUIDv4()
+    newData.uniqueId = "control-" + HELPER.getUUIDv4();
 
-    return newData
+    return newData;
 }
 
-export {
-    CONTROLS,
-    CONTROL_DEFAULT_DATA,
-    createControlData
-}
+export { CONTROLS, CONTROL_DEFAULT_DATA, createControlData };

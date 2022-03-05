@@ -8,15 +8,15 @@ import customClosureRule from "@/libraries/validations/custom-closure";
 import isRegexPassed from "@/libraries/validations/regex";
 
 export default class Validation {
-    rules = null
-    valueContainer = null
-    customClosures = {}
+    rules = null;
+    valueContainer = null;
+    customClosures = {};
 
     /**
      * Validation Result. Always create a new instance every time the validation is run
      * @type {ValidationResult}
      */
-    validationResult = null
+    validationResult = null;
 
     /**
      * Create a new Validation handler
@@ -25,9 +25,9 @@ export default class Validation {
      * @param {Object} definedClosures
      */
     constructor(valueContainer, controls, definedClosures = {}) {
-        this.valueContainer = valueContainer
-        this.validationClosures = definedClosures
-        this.setRules(controls)
+        this.valueContainer = valueContainer;
+        this.validationClosures = definedClosures;
+        this.setRules(controls);
     }
 
     /**
@@ -35,22 +35,22 @@ export default class Validation {
      * @param {{validations: ValidationRule[]}} controls
      */
     setRules(controls) {
-        const rules = {}
+        const rules = {};
 
         // traversal all control and pick the validations info
-        Object.entries(controls).forEach(controlInfo => {
-            let [controlId, controlItem] = controlInfo
-            let controlName = controlItem.name || controlId
+        Object.entries(controls).forEach((controlInfo) => {
+            let [controlId, controlItem] = controlInfo;
+            let controlName = controlItem.name || controlId;
 
             // no name => this field didn't have value
             if (!this.valueContainer.hasOwnProperty(controlName)) {
-                return
+                return;
             }
 
-            rules[controlName] = controlItem.validations
-        })
+            rules[controlName] = controlItem.validations;
+        });
 
-        this.rules = rules
+        this.rules = rules;
     }
 
     /**
@@ -58,13 +58,13 @@ export default class Validation {
      * @return {ValidationResult}
      */
     run() {
-        this.validationResult = new ValidationResult()
-        const controlKeys = Object.keys(this.rules)
+        this.validationResult = new ValidationResult();
+        const controlKeys = Object.keys(this.rules);
 
         for (const key of controlKeys) {
             // pickup basic data
-            const controlValue = this.valueContainer[key]
-            const controlRules = this.rules[key] || []
+            const controlValue = this.valueContainer[key];
+            const controlRules = this.rules[key] || [];
 
             // no rule no run
             if (!controlRules.length) {
@@ -75,14 +75,17 @@ export default class Validation {
              * start the validation process by each rules added for the control
              */
             for (const validationRule of controlRules) {
-                const status = this._singleRuleRun(validationRule, controlValue)
+                const status = this._singleRuleRun(
+                    validationRule,
+                    controlValue
+                );
                 if (!status) {
-                    this.validationResult.addError(key, validationRule)
+                    this.validationResult.addError(key, validationRule);
                 }
             }
         }
 
-        return this.validationResult
+        return this.validationResult;
     }
 
     /**
@@ -93,30 +96,43 @@ export default class Validation {
      */
     _singleRuleRun(validationRule, fieldValue) {
         switch (validationRule.ruleType) {
-
             case "required":
-                return requiredRule(fieldValue)
+                return requiredRule(fieldValue);
 
             case "min":
-                return minRule(fieldValue, validationRule.additionalValue)
+                return minRule(fieldValue, validationRule.additionalValue);
 
             case "max":
-                return maxRule(fieldValue, validationRule.additionalValue)
+                return maxRule(fieldValue, validationRule.additionalValue);
 
             case "isEmail":
-                return isEmailRule(fieldValue)
+                return isEmailRule(fieldValue);
 
             case "sameAs":
-                return sameAsRule(fieldValue, validationRule.additionalValue, this.valueContainer)
+                return sameAsRule(
+                    fieldValue,
+                    validationRule.additionalValue,
+                    this.valueContainer
+                );
 
             case "customClosure":
-                return customClosureRule(fieldValue, validationRule.additionalValue, this.valueContainer, this.customClosures)
+                return customClosureRule(
+                    fieldValue,
+                    validationRule.additionalValue,
+                    this.valueContainer,
+                    this.customClosures
+                );
 
             case "regex":
-                return isRegexPassed(fieldValue, validationRule.additionalValue)
+                return isRegexPassed(
+                    fieldValue,
+                    validationRule.additionalValue
+                );
 
             default:
-                throw new TypeError(`This validation type ${validationRule.ruleType} is not supported.`);
+                throw new TypeError(
+                    `This validation type ${validationRule.ruleType} is not supported.`
+                );
         }
     }
 }

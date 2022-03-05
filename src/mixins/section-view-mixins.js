@@ -1,18 +1,18 @@
 import AddRowControl from "@/views/builder/add-controls/AddRowControl";
-import {createNewRow} from "@/configs/row";
-import {SECTION_TYPES} from "@/configs/section";
-import {EVENT_CONSTANTS} from "@/configs/events";
-import draggable from 'vuedraggable'
+import { createNewRow } from "@/configs/row";
+import { SECTION_TYPES } from "@/configs/section";
+import { EVENT_CONSTANTS } from "@/configs/events";
+import draggable from "vuedraggable";
 import AddControlControl from "@/views/builder/add-controls/AddControlControl";
 import ControlView from "@/views/builder/ControlView";
-import {STYLE_INJECTION_MIXIN} from "@/mixins/style-injection-mixin";
+import { STYLE_INJECTION_MIXIN } from "@/mixins/style-injection-mixin";
 
 const SECTION_VIEW_MIXINS = {
     components: {
         AddRowControl, // Add Row
-        draggable,  // For Sorting Row/Control
+        draggable, // For Sorting Row/Control
         AddControlControl, // Add Control
-        ControlView // Show Control
+        ControlView, // Show Control
     },
 
     mixins: [STYLE_INJECTION_MIXIN],
@@ -21,12 +21,10 @@ const SECTION_VIEW_MIXINS = {
         section: Object,
         rows: Object,
         controls: Object,
-        permissions: Object
+        permissions: Object,
     },
 
-    data: () => ({
-
-    }),
+    data: () => ({}),
 
     methods: {
         /**
@@ -44,8 +42,15 @@ const SECTION_VIEW_MIXINS = {
             const newRowObject = createNewRow(rowType, extendData);
 
             // Parent-Handle: Add Row | Push ID into Section.rows
-            this.$formEvent.$emit(EVENT_CONSTANTS.BUILDER.ROW.CREATE, newRowObject)
-            this.$formEvent.$emit(EVENT_CONSTANTS.BUILDER.SECTION.ADDED_ROW, this.section.uniqueId, newRowObject.uniqueId)
+            this.$formEvent.$emit(
+                EVENT_CONSTANTS.BUILDER.ROW.CREATE,
+                newRowObject
+            );
+            this.$formEvent.$emit(
+                EVENT_CONSTANTS.BUILDER.SECTION.ADDED_ROW,
+                this.section.uniqueId,
+                newRowObject.uniqueId
+            );
         },
 
         /**
@@ -59,8 +64,8 @@ const SECTION_VIEW_MIXINS = {
                 EVENT_CONSTANTS.BUILDER.ROW.DELETE,
                 rowObject.uniqueId,
                 sectionObj.uniqueId
-            )
-        }
+            );
+        },
     },
 
     computed: {
@@ -68,7 +73,7 @@ const SECTION_VIEW_MIXINS = {
          * Property that will be used to drag - for Control Only
          */
         dragControlHandle() {
-            return ".option-control.drag-item"
+            return ".option-control.drag-item";
         },
 
         /**
@@ -76,23 +81,24 @@ const SECTION_VIEW_MIXINS = {
          * We can share this for each section/row
          */
         dragGroup() {
-            return "v-form-builder-control"
+            return "v-form-builder-control";
         },
-
 
         /**
          * Base group of drag/drop
          * We can share this for each section/row
          */
         rowDragGroup() {
-            return "v-form-builder-control-row-section".concat(this.section.uniqueId)
+            return "v-form-builder-control-row-section".concat(
+                this.section.uniqueId
+            );
         },
 
         /**
          * Accessor helper to check if the current section has control(s) or not
          */
         hasControl() {
-            return this.section.controls.length > 0
+            return this.section.controls.length > 0;
         },
 
         /**
@@ -102,13 +108,11 @@ const SECTION_VIEW_MIXINS = {
         draggableClasses() {
             return [
                 this.styles.ROW,
-                'control-list-container',
-                this.hasControl ? '' : 'empty'
-            ]
+                "control-list-container",
+                this.hasControl ? "" : "empty",
+            ];
         },
     },
 };
 
-export {
-    SECTION_VIEW_MIXINS
-}
+export { SECTION_VIEW_MIXINS };

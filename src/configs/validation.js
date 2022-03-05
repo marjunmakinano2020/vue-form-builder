@@ -62,8 +62,8 @@ const VALIDATION_RULES = {
         valueInfo: "Your method name",
 
         errorMessage: "Custom validation failed.",
-    }
-}
+    },
+};
 
 /**
  * Add Validation Rule for the Control Validation
@@ -74,21 +74,20 @@ class ValidationRule {
     /**
      * Needed properties
      */
-    ruleType = ""
-    errorMessage = ""
-    additionalValue = ""
+    ruleType = "";
+    errorMessage = "";
+    additionalValue = "";
 
     constructor(ruleType, customErrorMessage) {
-        this.ruleType = ruleType
+        this.ruleType = ruleType;
 
         if (ruleType) {
-            this.errorMessage = customErrorMessage || VALIDATION_RULES[ruleType].errorMessage || ""
+            this.errorMessage =
+                customErrorMessage ||
+                VALIDATION_RULES[ruleType].errorMessage ||
+                "";
         }
     }
 }
 
-export
-{
-    VALIDATION_RULES,
-    ValidationRule
-}
+export { VALIDATION_RULES, ValidationRule };

@@ -15,9 +15,7 @@ const FORM_DEFAULT_DATA = {
 
     // Server-Side validation
     enableServerSideValidation: false,
-    serverSideValidationEndpoint: ""
+    serverSideValidationEndpoint: "",
 };
 
-export {
-    FORM_DEFAULT_DATA
-}
+export { FORM_DEFAULT_DATA };
